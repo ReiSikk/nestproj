@@ -20,4 +20,13 @@ export class CatsService {
         return this.catModel.find().exec();
       }
 
+      //this is updating a cat
+      async update(id: string, createCatDto: CreateCatDto): Promise<Cat> {
+        return this.catModel.findByIdAndUpdate(id, createCatDto, {new: true});
+      }
+
+      async delete(id: string): Promise<Cat> {
+        return this.catModel.findByIdAndRemove(id);
+      }
+
 }
