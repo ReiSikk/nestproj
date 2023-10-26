@@ -20,8 +20,4 @@ export class CatsService {
         return this.catModel.find().exec();
       }
 
-    getCats() : string {
-        return "We are the cats";
-    }
-
 }
