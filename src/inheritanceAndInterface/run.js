@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var cat_1 = require("./cat");
+var bird_1 = require("./bird");
+var cat1 = new cat_1.Cat("Garfield", "Lasagna");
+cat1.move(10);
+var bird1 = new bird_1.Bird("Tweety", 15);
+bird1.fly(80);
+cat1.eat(30);
+bird1.eat(234);

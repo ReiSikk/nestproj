@@ -1,7 +1,10 @@
-import { Controller, Get, Post, Delete, Body, Param, Put, } from '@nestjs/common';
+import { Controller, Get, Post, Delete, Body, Param, Put, UseGuards, } from '@nestjs/common';
 import { CatsService } from './cats.service';
 import { Cat } from './cat.schema';
 import { CreateCatDto } from './create-cat.dto';
+import { TestGuard } from '../auth/test.guard';
+import { Test } from '@nestjs/testing';
+
 
 @Controller('cats')
 export class CatsController {
@@ -9,6 +12,7 @@ export class CatsController {
   
 //CRUD Operations
   @Post()
+  @UseGuards(TestGuard)
   addCat(@Body() createCatDto: CreateCatDto) {
       console.log(createCatDto);
 
